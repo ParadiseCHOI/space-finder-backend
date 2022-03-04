@@ -4,11 +4,17 @@ import { Stack, StackProps } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { Code, Function, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { LambdaIntegration, RestApi } from 'aws-cdk-lib/aws-apigateway';
+import { GenericTable } from './GenericTable';
 
 
 export class SpaceStack extends Stack {
 
   private api = new RestApi(this, 'SpaceApi');
+  private spacesTable = new GenericTable(
+    'SpacesTable',
+    'spaceId',
+    this
+  );
 
   constructor(scope: Construct, id: string, props: StackProps) {
     super(scope, id, props);
