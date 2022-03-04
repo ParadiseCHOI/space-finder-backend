@@ -1,2 +1,2 @@
 # space-finder-backend
-AWS CDK TypeScript project from scratch
+Build the AWS CDK TypeScript project from scratch
